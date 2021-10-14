@@ -19,7 +19,7 @@ https://github.com/trco/django-bootstrap-modal-forms
     var addEventHandlers = function (settings) {
         $(settings.modalForm).submit(function (event) {
             event.preventDefault();
-            event.stopImmediatePropagation();
+//             event.stopImmediatePropagation();
             if (event.originalEvent !== undefined && settings.isDeleteForm === false) {
                 event.preventDefault();
                 isFormValid(settings, submitForm);
