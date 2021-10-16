@@ -35,6 +35,9 @@ https://github.com/trco/django-bootstrap-modal-forms
     // Check if form.is_valid() & either show errors or submit it via callback
     var isFormValid = function (settings, callback) {
         $.ajax({
+            headers: {
+             'X-Requested-With': 'XMLHttpRequest'
+            },
             type: $(settings.modalForm).attr("method"),
             url: $(settings.modalForm).attr("action"),
             data: new FormData($(settings.modalForm)[0]),
@@ -73,6 +76,9 @@ https://github.com/trco/django-bootstrap-modal-forms
                 formdata.append("asyncUpdate", "True");
                 
                 $.ajax({
+                    headers: {
+                     'X-Requested-With': 'XMLHttpRequest'
+                    },
                     type: $(settings.modalForm).attr("method"),
                     url: $(settings.modalForm).attr("action"),
                     data: formdata,
@@ -87,6 +93,9 @@ https://github.com/trco/django-bootstrap-modal-forms
     
                         // Update page without refresh
                         $.ajax({
+                            headers: {
+                             'X-Requested-With': 'XMLHttpRequest'
+                            },
                             type: "GET",
                             url: asyncSettings.dataUrl,
                             dataType: "json",
